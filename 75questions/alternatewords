@@ -1,0 +1,15 @@
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        merged=""
+        
+        for i,j in zip(word1,word2):
+            merged+=i
+            merged+=j
+        if(len(word1)==len(word2)):
+            return merged
+        elif(len(word1)>len(word2)):
+            merged+=word1[slice(len(word2),len(word1),1)]
+            return merged
+        else:
+            merged+=word2[slice(len(word1),len(word2),1)]
+            return merged
